@@ -1,25 +1,63 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
+import "./App.css";
 
-function App() {
+import { Fragment } from "react";
+
+/*
+  - Game
+    - Header
+    - GameTable
+        - GameTableCell
+    - Footer
+*/
+
+function Game() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <Fragment>
+      <Gameheader />
+      <Gametable />
+    </Fragment>
+  );
+}
+
+function Gameheader() {
+
+  const [highestScore, setHighestScore] = useState(0);
+  const [currentScore, setCurrentScore] = useState(0);
+
+  return (
+    <header>
+      <h2 className="title">The Memory Game</h2>
+      <div className="scoreBoard">
+        <div className="highestScore">
+          <label>Highest Score: </label>
+          <p>{highestScore}</p>
+        </div>
+        <div className="currentScore">
+          <label>Current Score: </label>
+          <p>{currentScore}</p>
+        </div>
+      </div>
+    </header>
+  );
+}
+
+function Gametable() {
+  return (
+    <div className="gameTableContainer">
+      <table className="gameTable">
+        <GameTableCell />
+      </table>
     </div>
   );
+}
+
+function GameTableCell() {
+  return <td className="gameTableCell">card</td>;
+}
+
+function App() {
+  return <Game />;
 }
 
 export default App;

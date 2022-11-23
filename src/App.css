@@ -1,4 +1,4 @@
-.App {
+/* .App {
   text-align: center;
 }
 
@@ -35,4 +35,36 @@
   to {
     transform: rotate(360deg);
   }
+} */
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 15px;
+  background-color: aliceblue;
+}
+
+.highestScore,
+.currentScore {
+  display: flex;
+  align-items: center;
+}
+
+.highestScore p,
+.currentScore p {
+  margin-left: 10px;
+}
+
+.gameTable {
+  width: 500px;
+  border: 1px dashed #ccc;
+  border-radius: 15px;
+}
+
+.gameTableContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
 }
